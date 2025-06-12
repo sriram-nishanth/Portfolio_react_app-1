@@ -24,8 +24,8 @@ const Footercard = () => {
       </p>
       {/* Contact Info */}
       <div className="flex flex-row items-center gap-2">
-        <p className="text-xs md:text-sm">Email: sriramnishanth816@gmail.com</p>
-        <p className="text-xs md:text-sm">Phone: +91 9791343677</p>
+        <p className="text-xs md:text-sm">sriramnishanth816@gmail.com</p>
+        <p className="text-xs md:text-sm">+91 9791343677</p>
       </div>
     </footer>
   )
