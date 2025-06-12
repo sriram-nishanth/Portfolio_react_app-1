@@ -1,5 +1,5 @@
 import React from 'react'
-import LinkedIn from '../assets/linkedin.png'
+import LinkedIn from '../assets/LinkedIn.png'
 import GitHub from '../assets/Github.png'
 import photo from '../assets/photo_2.png'
 
