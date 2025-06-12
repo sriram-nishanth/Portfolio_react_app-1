@@ -41,7 +41,7 @@ const Contactcard = () => {
           ></textarea>
         </div>
         <button
-          className="bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-white font-semibold py-2 px-4 rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full mt-2"
+          className="bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-white font-semibold py-2 px-4 rounded shadow-lg hover:scale-105 hover:shadow-1xl hover:shadow-amber-700 transition-transform duration-300 w-full mt-2"
           type="submit"
         >
           Send Message
