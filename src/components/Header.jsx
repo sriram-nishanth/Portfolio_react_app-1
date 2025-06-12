@@ -7,7 +7,7 @@ const Header = () => {
         <h2 className="text-2xl md:text-[40px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026]">
           My Portfolio
         </h2>
-        <ul className="flex flex-wrap justify-center md:flex-wrap space-x-1 md:space-x-5 text-[#F8F8F8] text-center">
+        <ul className="flex flex-nowrap justify-center md:flex-wrap space-x-1 md:space-x-5 text-[#F8F8F8] text-center">
           {['Home', 'About', 'Projects', 'Contact'].map((item) => (
             <li
               key={item}

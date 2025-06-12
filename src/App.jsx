@@ -6,10 +6,12 @@ import skills from './assets/utils/Skills.js'
 import About from './components/About.jsx'
 import ProjectCard from './components/Projectcard.jsx'
 import projects from './assets/utils/projects.js'
+import Contactcard from './components/Contactcard.jsx'
+import Footercard from './components/Footercard.jsx'
 
 const App = () => {
   return (
-    <div className='bg-[#121212] px-4 md:px-10 backdrop:backdrop-blur-3xl'>
+    <div className='bg-[#121212] px-4 md:px-4 backdrop:backdrop-blur-3xl'>
       <Header />
       <Headersection />
 
@@ -51,6 +53,16 @@ const App = () => {
           ))}
         </div>
       </section>
+      {/* Contact Section */}
+      <section>
+        <div className="flex flex-col justify-center items-center w-full bg-[#121212]">
+          <Contactcard />
+        </div>
+      </section>
+      {/* Footer Section */}
+      <footer>
+        <Footercard />
+      </footer>
     </div>
   )
 }
