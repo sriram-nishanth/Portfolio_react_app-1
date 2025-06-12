@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 
-const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode }) => {
+const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, image }) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
-  // Show overlay only when card content is clicked
   const handleCardContentClick = (e) => {
     e.stopPropagation();
     setShowOverlay(true);
   };
 
-  // Close overlay when clicking outside the button
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       setShowOverlay(false);
@@ -18,16 +16,22 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode }) =>
 
   return (
     <div
-      className="relative group rounded-2xl bg-black/90 shadow-xl hover:scale-105 transition-transform duration-300 backdrop-blur-md p-4 md:p-6 min-w-[250px] cursor-pointer"
+      className="relative group rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 p-4 md:p-6 min-w-[250px] cursor-pointer overflow-hidden"
     >
+      {/* Blurred Background */}
+      <div
+        className="absolute inset-0 w-full h-full bg-contain opacity-100 backdrop-opacity-90 bg-center blur-md scale-110"
+        style={{ backgroundImage: `url(${image})` }}
+        aria-hidden="true"
+      ></div>
       {/* Card Content */}
       <div
         className="relative z-10"
         onClick={handleCardContentClick}
       >
         <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-sm md:text-base text-gray-300 mb-3">{description}</p>
-        <p className="text-xs md:text-sm text-gray-400 mb-2">
+        <p className="text-sm md:text-base text-gray-200 mb-3">{description}</p>
+        <p className="text-xs md:text-sm text-gray-300 mb-2">
           <span className="font-semibold text-[#FA6E00]">Tech:</span> {techStack.join(', ')}
         </p>
         {liveDemo && (
@@ -45,7 +49,7 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode }) =>
       {/* Overlay: show only when state is true */}
       {showOverlay && (
         <div
-          className="absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-300 bg-black/95 rounded-2xl opacity-100"
+          className={`absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-300 bg-[url('${image}')] bg-black/95 rounded-2xl opacity-100`}
           onClick={handleOverlayClick}
         >
           <a

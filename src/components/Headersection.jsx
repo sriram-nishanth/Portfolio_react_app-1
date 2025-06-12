@@ -1,6 +1,6 @@
 import React from 'react'
-import LinkedIn from '../assets/LinkedIn.png'
-import GitHub from '../assets/Github.png'
+import LinkedIn from '../assets/linkedin.svg'
+import GitHub from '../assets/github.svg'
 import photo from '../assets/photo_2.png'
 
 const Headersection = () => {
@@ -18,8 +18,8 @@ const Headersection = () => {
           I am a passionate developer with experience in building dynamic web applications.
         </p>
         <div className="flex flex-row gap-4">
-          <img src={LinkedIn} alt="LinkedIn" className="w-8 h-8 md:w-10 md:h-10" />
-          <img src={GitHub} alt="GitHub" className="w-8 h-8 md:w-10 md:h-10" />
+          <img src={LinkedIn} alt="LinkedIn" className="w-8 h-8 md:w-8 md:h-8 mix-blend-hard-light" />
+          <img src={GitHub} alt="GitHub" className="w-8 h-8 md:w-10 md:h-10 mix-blend-hard-light" />
         </div>
         <div className="flex flex-row gap-3 md:gap-5">
           <button className="bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-white font-semibold py-2 px-4 rounded shadow-2xl w-32 md:w-40 hover:scale-105 hover:shadow-orange-500 transition-transform duration-300">

@@ -49,6 +49,7 @@ const App = () => {
               techStack={project.techStack}
               liveDemo={project.liveDemo}
               sourceCode={project.sourceCode}
+              image={project.image} // <-- add this line
             />
           ))}
         </div>
