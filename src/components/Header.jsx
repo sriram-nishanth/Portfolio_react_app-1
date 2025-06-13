@@ -4,7 +4,7 @@ import navbar from '../assets/navbar.svg'
 const Header = () => {
   return (
     <div className="w-full bg-transparent">
-      <div className="flex flex-row md:flex-row justify-between items-center gap-4 md:gap-10 p-3 md:p-5 sticky top-0 z-50 bg-[#121212]/80 backdrop-blur">
+      <div className="flex flex-row md:flex-row justify-between items-center gap-4 md:gap-10 pt-3 md:p-5 sticky top-0 z-50 bg-[#121212]/80 backdrop-blur">
        <img src={navbar} alt="Navbar" className="md:hidden w-8 h-8" />
         <h2 className="text-2xl md:text-[40px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026]">
           My Portfolio
