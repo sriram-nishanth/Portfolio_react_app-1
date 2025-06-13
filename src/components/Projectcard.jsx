@@ -20,7 +20,7 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, imag
     >
       {/* Blurred Background */}
       <div
-        className="absolute inset-0 w-full h-full bg-contain opacity-100 backdrop-opacity-90 bg-center blur-md scale-110"
+        className="absolute inset-0 w-full h-full bg-contain opacity-100 backdrop-opacity-90 bg-center blur-md scale-110 brightness-50"
         style={{ backgroundImage: `url(${image})` }}
         aria-hidden="true"
       ></div>

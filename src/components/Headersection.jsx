@@ -4,18 +4,17 @@ import photo from '../assets/photo_2.png'
 const Headersection = () => {
   return (
     <div className="flex flex-col md:flex-row w-full items-center md:items-start">
-      <div className="flex flex-col justify-start items-start gap-y-6 md:gap-y-10 mb-1 pt-8 md:pt-15 w-full md:w-1/2">
-        <div className="flex flex-col justify-start items-start gap-y-2 pt-4 md:pt-10">
+      <div className="flex flex-col justify-center items-center md:items-start gap-y-6 md:gap-y-10 mb-1 pt-8 md:pt-15 w-full md:w-1/2 text-center md:text-left">
+        <div className="flex flex-col justify-center items-center md:items-start gap-y-2 pt-4 md:pt-10">
           <span className="text-lg md:text-[20px] text-[#F8F8F8] block">Hello, I am</span>
           <span className="text-xl md:text-[25px] font-bold text-[#F8F8F8] block">Sriram Nishanth T</span>
           <span className="text-2xl md:text-[50px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026] m-2 gap-x-6">
             Full Stack Web Developer
           </span>
         </div>
-        <p className="text-base md:text-[25px] text-[#F8F8F8]">
-          I am a passionate developer with experience in building dynamic web applications.
+        <p className="text-base md:text-[25px] text-[#F8F8F8]">I am a passionate developer with experience in building dynamic web applications.
         </p>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 justify-center md:justify-start">
           {/* LinkedIn SVG */}
           <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
             <svg className="w-7 h-7 md:w-7 md:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -29,7 +28,7 @@ const Headersection = () => {
             </svg>
           </a>
         </div>
-        <div className="flex flex-row gap-3 md:gap-5">
+        <div className="flex flex-row gap-3 md:gap-5 justify-center md:justify-start">
           <button className="bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-white font-semibold py-2 px-4 rounded shadow-2xl w-32 md:w-40 hover:scale-105 hover:shadow-orange-500 transition-transform duration-300">
             Hire Me
           </button>
