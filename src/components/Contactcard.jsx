@@ -1,35 +1,38 @@
-import React, { useRef,useState } from 'react'
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react'
 
 const Contactcard = () => {
-    const form = useRef('');
-    const [status, setStatus] = useState('');
+  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('')
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
-    emailjs
-      .sendForm('service_nuqo1ig', 'template_jyog84s', form.current, {
-        publicKey: 'KY4sFwumfZE1k3Ar7',
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('Sending...')
+    try {
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       })
-      .then(
-        () => {
-          setStatus('Message sent successfully!');
-          form.current.reset();
-        },
-        (error) => {
-           setStatus('Failed to send message.');
-          console.log('FAILED...', error.text);
-        },
-      );
-  };
+      if (res.ok) {
+        setStatus('Message sent successfully!')
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setStatus('Failed to send message.')
+      }
+    } catch (err) {
+      setStatus('Failed to send message.')
+    }
+  }
 
   return (
     <div className="w-full flex justify-center items-center py-16 bg-[#121212]">
       <form
         className="w-full max-w-lg p-6 bg-[#1a1a1a] rounded-lg shadow-lg flex flex-col gap-4"
-        onSubmit={sendEmail}
-        ref={form}
+        onSubmit={handleSubmit}
       >
         <h2 className="text-2xl md:text-[40px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026] mb-4 text-center">
           Contact Me
@@ -44,6 +47,7 @@ const Contactcard = () => {
             type="text"
             placeholder="Your Name"
             value={form.name}
+            onChange={handleChange}
             required
           />
         </div>
@@ -57,7 +61,7 @@ const Contactcard = () => {
             type="email"
             placeholder="Your Email"
             value={form.email}
-
+            onChange={handleChange}
             required
           />
         </div>
@@ -71,6 +75,7 @@ const Contactcard = () => {
             rows="4"
             placeholder="Your Message"
             value={form.message}
+            onChange={handleChange}
             required
           ></textarea>
         </div>
