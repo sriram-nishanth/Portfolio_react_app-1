@@ -1,4 +1,5 @@
 import React from 'react'
+import phoneIcon from '../assets/call.svg'
 
 const Footercard = () => {
   const handleNavClick = (e, id) => {
@@ -34,8 +35,30 @@ const Footercard = () => {
       </p>
       {/* Contact Info */}
       <div className="flex flex-row items-center gap-2">
-        <p className="text-xs md:text-sm">sriramnishanth816@gmail.com</p>
-        <p className="text-xs md:text-sm">+91 9791343677</p>
+        <p className="text-xs md:text-sm flex items-center gap-1">
+          {/* Email SVG icon with white fill */}
+          <svg
+            className="w-5 h-5"
+            fill="white"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13 20 4.01V4H4zm16 2.41l-7.29 7.3a1 1 0 0 1-1.42 0L4 6.41V20h16V6.41z"/>
+          </svg>
+          sriramnishanth816@gmail.com
+        </p>
+        <p className="text-xs md:text-sm flex items-center gap-1">
+          {/* Phone SVG icon with white fill */}
+          <svg
+            className="w-4 h-4"
+            fill="white"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
+          </svg>
+          +91 9791343677
+        </p>
       </div>
     </footer>
   )
