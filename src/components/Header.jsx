@@ -33,7 +33,7 @@ const Header = () => {
       </div>
       {/* Mobile Slide Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-[#121212] z-50 transform ${
+        className={`fixed top-0 left-0 h-full w-64 backdrop-blur-3xl z-50 transform ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 md:hidden`}
       >
@@ -61,7 +61,7 @@ const Header = () => {
       {/* Overlay */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden"
+          className="fixed inset-0 bg-transparent bg-opacity-10 z-40 md:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}
