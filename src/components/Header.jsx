@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <div className="w-full bg-transparent">
-      <div className="flex flex-row md:flex-row justify-between items-center gap-4 md:gap-10 pt-3 md:p-5 sticky top-0 z-50 bg-[#121212]/80 backdrop-blur">
+      <div className="flex flex-row md:flex-row justify-between items-center gap-3 md:gap-10 pt-3 md:p-5 sticky top-0 z-50 bg-[#121212]/80 backdrop-blur">
         {/* Navbar icon for mobile */}
         <img
           src={navbar}
@@ -14,7 +14,7 @@ const Header = () => {
           className="md:hidden w-8 h-8 cursor-pointer"
           onClick={() => setMenuOpen(true)}
         />
-        <h2 className="text-2xl md:text-[40px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026]">
+        <h2 className="text-2xl ml-9 whitespace-nowrap md:ml-0 md:text-[40px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026]">
           My Portfolio
         </h2>
         <ul className="hidden md:flex flex-nowrap justify-center md:flex-wrap space-x-1 md:space-x-5 text-[#F8F8F8] text-center">
@@ -27,7 +27,7 @@ const Header = () => {
             </li>
           ))}
         </ul>
-        <button className="mt-0 md:mt-0 text-base md:text-[20px] font-semibold bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-25 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <button className="mt-0 md:mt-0 text-2xs md:text-[20px] font-semibold bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-20 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
           Hire Me
         </button>
       </div>
