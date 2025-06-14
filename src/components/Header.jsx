@@ -3,10 +3,27 @@ import navbar from '../assets/navbar.svg'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const navLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
+  ]
+
+  const handleNavClick = (e, id) => {
+    e.preventDefault()
+    setTimeout(() => {
+      const section = document.getElementById(id)
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 200) // 200ms delay before scrolling
+  }
 
   return (
-    <div className="w-full bg-transparent">
-      <div className="flex flex-row md:flex-row justify-between items-center gap-6 md:gap-10 pt-3 p-0 md:p-3 sticky top-0 z-50 bg-[#121212]/80 backdrop-blur">
+    <div className="w-full">
+      <div className="flex flex-row md:flex-row justify-between items-center gap-6 md:gap-10 pt-3 p-0 md:p-3 top-2 z-50 rounded-lg">
         {/* Navbar icon for mobile */}
         <img
           src={navbar}
@@ -17,17 +34,20 @@ const Header = () => {
         <h2 className="text-2xl ml-10 whitespace-nowrap md:ml-0 md:text-[40px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026]">
           My Portfolio
         </h2>
-        <ul className="hidden md:flex flex-nowrap justify-center md:flex-wrap space-x-1 md:space-x-5 text-[#F8F8F8] text-center">
-          {['Home', 'About', 'Projects', 'Contact'].map((item) => (
-            <li
-              key={item}
-              className="text-base md:text-[20px] font-sans hover:text-black hover:bg-amber-100 rounded-2xl w-20 md:w-24 hover:scale-110 shadow-2xl hover:shadow-amber-200 transition-transform duration-300 mb-1"
-            >
-              {item}
+        <ul className="hidden md:flex flex-nowrap justify-center md:flex-wrap space-x-1 md:space-x-5 text-[#F8F8F8] items-center rounded-[50px] border-2 border-gray-600 backdrop-blur-2xl h-15 w-150 text-center">
+          {navLinks.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.href}
+                className="text-base md:text-[20px] font-sans hover:text-black hover:bg-amber-100 rounded-2xl w-20 md:w-24 hover:scale-110 shadow-2xl hover:shadow-amber-200 transition-transform duration-300 mb-1 block text-center"
+                onClick={(e) => handleNavClick(e, item.href.substring(1))}
+              >
+                {item.name}
+              </a>
             </li>
           ))}
         </ul>
-        <button className="mt-0 md:mt-0 text-2xs md:text-[20px] font-semibold whitespace-nowrap bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-25 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <button className="mt-0 mb-2 md:mt-0 text-2xs md:text-[20px] font-semibold whitespace-nowrap bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-25 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
           Hire Me
         </button>
       </div>
@@ -47,13 +67,18 @@ const Header = () => {
           </button>
         </div>
         <ul className="flex flex-col items-start pl-8 pt-4 space-y-6 text-[#F8F8F8]">
-          {['Home', 'About', 'Projects', 'Contact'].map((item) => (
-            <li
-              key={item}
-              className="text-lg font-sans hover:text-black hover:bg-amber-100 rounded-2xl w-40 px-4 py-2 hover:scale-105 hover:shadow-2xl hover:shadow-amber-200 transition-transform duration-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item}
+          {navLinks.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.href}
+                className="text-lg font-sans hover:text-black hover:bg-amber-100 rounded-2xl w-40 px-4 py-2 hover:scale-105 shadow-2xl hover:shadow-amber-200 transition-transform duration-300 block"
+                onClick={(e) => {
+                  handleNavClick(e, item.href.substring(1))
+                  setMenuOpen(false)
+                }}
+              >
+                {item.name}
+              </a>
             </li>
           ))}
         </ul>

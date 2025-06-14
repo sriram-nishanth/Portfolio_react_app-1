@@ -49,7 +49,7 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, imag
       {/* Overlay: show only when state is true */}
       {showOverlay && (
         <div
-          className={`absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-300 bg-[url('${image}')] bg-black/95 rounded-2xl opacity-100`}
+          className={`absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-300 bg-[url('${image}')] bg-black/20 backdrop-blur-lg rounded-2xl opacity-100`}
           onClick={handleOverlayClick}
         >
           <a
