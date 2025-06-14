@@ -31,7 +31,7 @@ const Headersection = () => {
           </a>
         </div>
         <div className="flex flex-row gap-3 md:gap-5 justify-center md:justify-start">
-          <button className="bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-white font-semibold py-2 px-4 rounded shadow-2xl w-32 md:w-40 hover:scale-105 hover:shadow-orange-500 transition-transform duration-300">
+          <button className="bg-gradient-to-r from-[#FD6F00] to-[#E46400] backdrop-blur-lg text-white font-semibold py-2 px-4 rounded shadow-2xl w-32 md:w-40 hover:scale-105 hover:shadow-orange-500 transition-transform duration-300">
             Hire Me
           </button>
           <a href={resume} download="My_Resume">
