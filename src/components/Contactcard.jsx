@@ -31,7 +31,7 @@ const Contactcard = () => {
   return (
     <div className="w-full flex justify-center items-center py-16 bg-[#121212]">
       <form
-        className="w-full max-w-lg p-6 bg-[#1a1a1a] rounded-lg shadow-lg flex flex-col gap-4"
+        className="w-full max-w-lg p-6 bg-[#1a1a1a]/20 backdrop-blur-4xl rounded-lg shadow-lg flex flex-col gap-4"
         onSubmit={handleSubmit}
       >
         <h2 className="text-2xl md:text-[40px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026] mb-4 text-center">
@@ -42,7 +42,7 @@ const Contactcard = () => {
             Name
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 focus:text-amber-50 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="name"
             type="text"
             placeholder="Your Name"
@@ -56,7 +56,7 @@ const Contactcard = () => {
             Email
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 focus:text-amber-50 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="email"
             type="email"
             placeholder="Your Email"
@@ -70,7 +70,7 @@ const Contactcard = () => {
             Message
           </label>
           <textarea
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 focus:text-amber-50 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="message"
             rows="4"
             placeholder="Your Message"
