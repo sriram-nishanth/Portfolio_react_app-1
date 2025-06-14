@@ -33,7 +33,7 @@ const Header = () => {
       </div>
       {/* Mobile Slide Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 backdrop-blur-3xl z-50 transform ${
+        className={`fixed top-0 left-0 h-full w-64 bg-opacity-100 backdrop-blur-2xl z-50 transform ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 md:hidden`}
       >
@@ -50,7 +50,7 @@ const Header = () => {
           {['Home', 'About', 'Projects', 'Contact'].map((item) => (
             <li
               key={item}
-              className="text-lg font-sans hover:text-black hover:bg-amber-100 rounded-2xl w-40 px-4 py-2 hover:scale-105 shadow-2xl hover:shadow-amber-200 transition-transform duration-300"
+              className="text-lg font-sans hover:text-black hover:bg-amber-100 rounded-2xl w-40 px-4 py-2 hover:scale-105 hover:shadow-2xl hover:shadow-amber-200 transition-transform duration-300"
               onClick={() => setMenuOpen(false)}
             >
               {item}

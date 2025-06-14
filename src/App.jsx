@@ -11,7 +11,7 @@ import Footercard from './components/Footercard.jsx'
 
 const App = () => {
   return (
-    <div className='bg-[#121212] px-4 md:px-4 backdrop:backdrop-blur-3xl'>
+    <div className='bg-[#121212] px-4 md:px-4 backdrop-blur-5xl'>
       <Header />
       <Headersection />
 
