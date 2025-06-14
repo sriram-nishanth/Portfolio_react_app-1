@@ -18,7 +18,7 @@ const Header = () => {
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' })
       }
-    }, 200) // 200ms delay before scrolling
+    }, 300) // 200ms delay before scrolling
   }
 
   return (
