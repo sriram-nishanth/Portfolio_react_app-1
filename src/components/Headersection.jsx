@@ -1,6 +1,6 @@
 import React from 'react'
 import photo from '../assets/photo_2.png'
-import vector from '../assets/vector.png'
+import vector from '../assets/Vector.png'
 import resume from '/Resume.pdf' // Adjust the path to your resume file
 
 const Headersection = () => {
