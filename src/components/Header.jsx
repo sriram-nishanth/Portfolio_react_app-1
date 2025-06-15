@@ -50,7 +50,7 @@ const Header = () => {
         <h2 className="text-2xl ml-10 whitespace-nowrap md:ml-0 md:text-[40px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FA6E00] to-[#E60026]">
           My Portfolio
         </h2>
-        <ul className="hidden md:flex flex-nowrap justify-center md:flex-wrap space-x-1 md:space-x-5 text-[#F8F8F8] items-center rounded-[50px] border-2 border-gray-600 backdrop-blur-2xl h-15 w-150 text-center">
+        <ul className="hidden md:flex flex-nowrap justify-center md:flex-nowrap space-x-1 md:space-x-5 text-[#F8F8F8] items-center rounded-[50px] border-2 border-gray-600 bg-white/5 backdrop-blur-sm h-15 w-150 text-center">
           {navLinks.map((item) => (
             <li key={item.name}>
               <a
@@ -64,7 +64,7 @@ const Header = () => {
           ))}
         </ul>
         <button
-          className="mt-0 mb-2 md:mt-0 text-2xs md:text-[20px] font-semibold whitespace-nowrap bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-25 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300"
+          className="mt-0 mb-2 md:mt-0 text-2xs md:text-[20px] font-semibold whitespace-nowrap flex-shrink-0 md:flex-shrink-0 bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-18 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300"
           onClick={() => {
             const footer = document.querySelector('footer')
             if (footer) {

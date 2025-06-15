@@ -17,7 +17,7 @@ const App = () => {
       {/* (Optional) Add radial gradient or other effects here as another absolute div */}
 
       {/* Main content */}
-      <div className="relative z-10 px-4 py-4 md:px-4 scroll-smooth">
+      <div className="relative z-10 px-4 md:px-4 scroll-smooth">
         <Header />
         <section id="home">
           <Headersection />
