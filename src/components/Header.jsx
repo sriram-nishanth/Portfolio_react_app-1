@@ -1,5 +1,15 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import navbar from '../assets/navbar.svg'
+
+const headerVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+}
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -22,7 +32,12 @@ const Header = () => {
   }
 
   return (
-    <div className="w-full">
+    <motion.div
+      className="w-full"
+      variants={headerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="flex flex-row md:flex-row justify-between items-center gap-6 md:gap-10 pt-3 p-0 md:p-3 top-2 z-50 rounded-lg">
         {/* Navbar icon for mobile */}
         <img
@@ -47,7 +62,15 @@ const Header = () => {
             </li>
           ))}
         </ul>
-        <button className="mt-0 mb-2 md:mt-0 text-2xs md:text-[20px] font-semibold whitespace-nowrap bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-25 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <button
+          className="mt-0 mb-2 md:mt-0 text-2xs md:text-[20px] font-semibold whitespace-nowrap bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-25 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300"
+          onClick={() => {
+            const footer = document.querySelector('footer')
+            if (footer) {
+              footer.scrollIntoView({ behavior: 'smooth' })
+            }
+          }}
+        >
           Hire Me
         </button>
       </div>
@@ -90,7 +113,7 @@ const Header = () => {
           onClick={() => setMenuOpen(false)}
         />
       )}
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,4 +1,14 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+
+const contactVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+}
 
 const Contactcard = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -29,7 +39,13 @@ const Contactcard = () => {
   }
 
   return (
-    <div className="w-full flex justify-center items-center py-16">
+    <motion.div
+      className="w-full flex justify-center items-center py-16"
+      variants={contactVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+    >
       <form
         className="w-full max-w-lg p-6 bg-[#1a1a1a]/30 backdrop-blur-1xl rounded-lg shadow-lg flex flex-col gap-4"
         onSubmit={handleSubmit}
@@ -89,7 +105,7 @@ const Contactcard = () => {
           <div className="text-center text-white mt-2">{status}</div>
         )}
       </form>
-    </div>
+    </motion.div>
   )
 }
 

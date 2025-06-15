@@ -1,9 +1,25 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import AboutUs from '../assets/AboutUs.png'
+
+const aboutVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+}
 
 const About = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center p-4 md:p-10 gap-8 md:gap-10">
+    <motion.div
+      className="flex flex-col md:flex-row justify-between items-center p-4 md:p-10 gap-8 md:gap-10"
+      variants={aboutVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+    >
       <div className="flex-1 flex flex-col justify-center items-start max-w-xl">
         <p className="text-base md:text-lg text-gray-300 text-justify font-normal mb-4">
           Hi! I'm Sriram Nishanth T, a passionate and detail-oriented Full Stack Web Developer with a strong foundation in both frontend and backend technologies. I specialize in building dynamic, responsive, and user-friendly web applications that solve real-world problems.
@@ -21,7 +37,7 @@ const About = () => {
           alt="About Me"
         />
       </div>
-    </div>
+    </motion.div>
   )
 }
 

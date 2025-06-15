@@ -1,5 +1,15 @@
 import React from 'react'
-import phoneIcon from '../assets/call.svg'
+import { motion } from 'framer-motion'
+
+
+const footerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+}
 
 const Footercard = () => {
   const handleNavClick = (e, id) => {
@@ -13,7 +23,13 @@ const Footercard = () => {
   };
 
   return (
-    <footer className="text-white py-8 px-4 flex flex-col items-center gap-6 w-full">
+    <motion.footer
+      className="text-white py-8 px-4 flex flex-col items-center gap-6 w-full"
+      variants={footerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+    >
       {/* Navigation Links */}
       <ul className="flex flex-wrap justify-center gap-6 mb-2">
         <li>
@@ -35,7 +51,8 @@ const Footercard = () => {
       </p>
       {/* Contact Info */}
       <div className="flex flex-row items-center gap-2">
-        <p className="text-xs md:text-sm flex items-center gap-1">
+      <a href="mailto:sriramnishanth816@gmail.com"> 
+      <p className="text-xs md:text-sm flex items-center gap-1">
           {/* Email SVG icon with white fill */}
           <svg
             className="w-5 h-5"
@@ -47,20 +64,23 @@ const Footercard = () => {
           </svg>
           sriramnishanth816@gmail.com
         </p>
-        <p className="text-xs md:text-sm flex items-center gap-1">
-          {/* Phone SVG icon with white fill */}
-          <svg
-            className="w-4 h-4"
-            fill="white"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
-          </svg>
-          +91 9791343677
+        </a>
+        <a href="tel:+919791343677">
+          <p className="text-xs md:text-sm flex items-center gap-1">
+            {/* Phone SVG icon with white fill */}
+            <svg
+              className="w-4 h-4"
+              fill="white"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
+            </svg>
+            +91 9791343677
         </p>
+        </a>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 

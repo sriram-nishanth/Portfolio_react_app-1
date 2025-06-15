@@ -1,4 +1,14 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const projectCardVariants = {
+  hidden: { opacity: 0, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+};
 
 const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, image }) => {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -15,8 +25,12 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, imag
   };
 
   return (
-    <div
-      className="relative group rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 p-4 md:p-6 min-w-[250px] cursor-pointer overflow-hidden"
+    <motion.div
+      className="relative group rounded-2xl hover:shadow-xl hover:scale-105 transition-transform duration-300 p-4 md:p-6 min-w-[250px] overflow-hidden"
+      variants={projectCardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
     >
       {/* Blurred Background */}
       <div
@@ -63,7 +77,7 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, imag
           </a>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
