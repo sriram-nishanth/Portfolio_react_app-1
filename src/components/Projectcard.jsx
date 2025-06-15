@@ -26,7 +26,7 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, imag
 
   return (
     <motion.div
-      className="relative group rounded-2xl shadow-xl transition-transform duration-300 p-4 md:p-6 min-w-[250px] cursor-pointer overflow-hidden"
+      className="relative group rounded-2xl hover:shadow-xl hover:scale-105 transition-transform duration-300 p-4 md:p-6 min-w-[250px] overflow-hidden"
       variants={projectCardVariants}
       initial="hidden"
       whileInView="visible"

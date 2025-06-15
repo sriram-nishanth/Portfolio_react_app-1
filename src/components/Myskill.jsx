@@ -13,7 +13,7 @@ const skillVariants = {
 const Myskill = (props) => {
   return (
     <motion.div
-      className="flex flex-col justify-center items-center w-30 md:w-44 backdrop-blur-2xl rounded-lg p-3 md:p-4 shadow-md transition-transform duration-300 cursor-pointer"
+      className="flex flex-col justify-center items-center w-30 md:w-44 backdrop-blur-2xl rounded-lg p-3 md:p-4 hover:shadow-lg hover:shadow-emerald-100 hover:scale-105 transition-transform duration-300"
       variants={skillVariants}
       initial="hidden"
       whileInView="visible"
