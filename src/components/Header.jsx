@@ -95,7 +95,7 @@ const Header = () => {
             <li key={item.name}>
               <a
                 href={item.href}
-                className="text-lg font-sans hover:text-black hover:bg-amber-100 rounded-2xl w-40 px-4 py-2 hover:scale-105 shadow-2xl hover:shadow-amber-200 transition-transform duration-300 block"
+                className="text-lg font-sans hover:text-black hover:bg-amber-100 rounded-2xl w-40 px-4 py-2 hover:scale-105 hover:shadow-2xl hover:shadow-amber-200 transition-transform duration-300 block"
                 onClick={(e) => {
                   handleNavClick(e, item.href.substring(1))
                   setMenuOpen(false)
