@@ -13,11 +13,11 @@ const skillVariants = {
 const Myskill = (props) => {
   return (
     <motion.div
-      className="flex flex-col justify-center items-center w-30 md:w-44 backdrop-blur-2xl rounded-lg p-3 md:p-4 hover:shadow-md hover:shadow-emerald-50 hover:scale-110 transition-transform duration-300"
+      className="flex flex-col justify-center items-center w-30 md:w-44 backdrop-blur-2xl rounded-lg p-3 md:p-4 shadow-md transition-transform duration-300 cursor-pointer"
       variants={skillVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false }}
     >
       <img
         className="w-12 h-12 md:w-20 md:h-20"

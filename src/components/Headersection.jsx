@@ -20,7 +20,7 @@ const Headersection = () => {
       variants={headerSectionVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false }}
     >
       <div className={`flex flex-col justify-center items-center md:items-start gap-y-6 md:gap-y-10 mb-1 pt-8 md:pt-15 w-full md:w-1/2 text-center md:text-left bg-[url(${vector})] bg-no-repeat bg-cover bg-center bg-fixed`}>
         <div className="flex flex-col justify-center items-center md:items-start gap-y-2 pt-4 md:pt-10">

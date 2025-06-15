@@ -18,7 +18,7 @@ const About = () => {
       variants={aboutVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false }}
     >
       <div className="flex-1 flex flex-col justify-center items-start max-w-xl">
         <p className="text-base md:text-lg text-gray-300 text-justify font-normal mb-4">

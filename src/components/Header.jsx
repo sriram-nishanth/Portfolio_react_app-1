@@ -37,6 +37,7 @@ const Header = () => {
       variants={headerVariants}
       initial="hidden"
       animate="visible"
+      viewport={{ once: false }}
     >
       <div className="flex flex-row md:flex-row justify-between items-center gap-6 md:gap-10 pt-3 p-0 md:p-3 top-2 z-50 rounded-lg">
         {/* Navbar icon for mobile */}

@@ -44,7 +44,7 @@ const Contactcard = () => {
       variants={contactVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false }}
     >
       <form
         className="w-full max-w-lg p-6 bg-[#1a1a1a]/30 backdrop-blur-1xl rounded-lg shadow-lg flex flex-col gap-4"

@@ -28,7 +28,7 @@ const Footercard = () => {
       variants={footerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false }}
     >
       {/* Navigation Links */}
       <ul className="flex flex-wrap justify-center gap-6 mb-2">
