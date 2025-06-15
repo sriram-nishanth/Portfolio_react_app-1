@@ -64,7 +64,7 @@ const Header = () => {
           ))}
         </ul>
         <button
-          className="mt-0 mb-2 md:mt-0 text-2xs md:text-[20px] font-semibold whitespace-nowrap flex-shrink-0 md:flex-shrink-0 bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-18 md:w-30 h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300"
+          className="mt-0 md:mt-0 text-2xs md:text-[20px] font-semibold whitespace-nowrap flex-shrink-0 md:flex-shrink-0 bg-gradient-to-r from-[#FD6F00] to-[#E46400] text-[#FFFFFF] rounded-md w-20 md:w-30 h-8 md:h-8 hover:shadow-amber-600 hover:shadow-2xl hover:scale-105 transition-transform duration-300"
           onClick={() => {
             const footer = document.querySelector('footer')
             if (footer) {
