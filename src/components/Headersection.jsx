@@ -69,7 +69,7 @@ const Headersection = () => {
       {/* Image Section */}
       <div className="flex justify-center items-center w-full md:w-1/2 py-6 md:py-0">
         <img
-          className="w-[180px] h-[180px] md:w-[600px] md:h-[600px] object-cover shadow-2xl transition duration-300"
+          className="w-[180px] h-[180px] md:w-[600px] md:h-[600px] object-cover rounded-full shadow-2xl transition duration-300"
           src={photo}
           alt="Sriram Nishanth T"
         />
