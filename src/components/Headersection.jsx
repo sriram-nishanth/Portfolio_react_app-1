@@ -69,13 +69,11 @@ const Headersection = () => {
       
       {/* Image Section with 3D tilt */}
       <div className="flex justify-center items-center w-full md:w-1/2 py-6 md:py-0">
-        <Tilt tiltMaxAngleX={14} tiltMaxAngleY={14} scale={1.03} glareEnable={true} className="rounded-full">
           <img
             className="w-40 h-40 sm:w-56 sm:h-56 md:w-[480px] md:h-[480px] lg:w-[520px] lg:h-[520px] object-cover rounded-full shadow-2xl max-w-full"
             src={photo}
             alt="Sriram Nishanth T"
           />
-        </Tilt>
       </div>
     </motion.div>
   )
