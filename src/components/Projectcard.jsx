@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 
 const projectCardVariants = {
   hidden: { opacity: 0, scale: 0.97 },
@@ -26,15 +27,16 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, imag
 
   return (
     <motion.div
-      className="relative group rounded-2xl hover:shadow-xl hover:scale-105 transition-transform duration-300 p-4 md:p-6 min-w-[250px] overflow-hidden"
+      className="relative w-full"
       variants={projectCardVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false }}
     >
+      <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} scale={1.02} glareEnable={true} className="group rounded-2xl hover:shadow-xl transition-transform duration-300 p-4 md:p-6 w-full overflow-hidden bg-black/20 backdrop-blur">
       {/* Blurred Background */}
       <div
-        className="absolute inset-0 w-full h-full bg-contain opacity-100 backdrop-opacity-90 bg-center blur-md scale-110 brightness-50"
+        className="absolute inset-0 w-full h-full bg-cover opacity-100 bg-center blur-md scale-110 brightness-50"
         style={{ backgroundImage: `url(${image})` }}
         aria-hidden="true"
       ></div>
@@ -77,6 +79,7 @@ const ProjectCard = ({ title, description, techStack, liveDemo, sourceCode, imag
           </a>
         </div>
       )}
+      </Tilt>
     </motion.div>
   );
 };

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import photo from '../assets/photo_2.png'
 import vector from '../assets/Vector.png'
 import resume from '/Resume.pdf' // Adjust the path to your resume file
+import Tilt from 'react-parallax-tilt'
 
 const headerSectionVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -16,13 +17,13 @@ const headerSectionVariants = {
 const Headersection = () => {
   return (
     <motion.div
-      className="flex flex-col md:flex-row w-full items-center md:items-start"
+      className="flex flex-col md:flex-row w-full items-center md:items-center gap-6 md:gap-10"
       variants={headerSectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false }}
     >
-      <div className={`flex flex-col justify-center items-center md:items-start gap-y-6 md:gap-y-10 mb-1 pt-8 md:pt-15 w-full md:w-1/2 text-center md:text-left bg-[url(${vector})] bg-no-repeat bg-cover bg-center bg-fixed`}>
+      <div className={`flex flex-col justify-center items-center md:items-start gap-y-5 md:gap-y-8 mb-1 pt-8 md:pt-10 w-full md:w-1/2 text-center md:text-left bg-[url(${vector})] bg-no-repeat bg-cover bg-center`}>
         <div className="flex flex-col justify-center items-center md:items-start gap-y-2 pt-4 md:pt-10">
           <span className="text-lg md:text-[20px] text-[#F8F8F8] block">Hello, I am</span>
           <span className="text-xl md:text-[25px] font-bold text-[#F8F8F8] block">Sriram Nishanth T</span>
@@ -30,7 +31,7 @@ const Headersection = () => {
             Full Stack Web Developer
           </span>
         </div>
-        <p className="text-base md:text-[25px] text-[#F8F8F8]">I am a passionate developer with experience in building dynamic web applications.
+        <p className="text-base md:text-xl text-[#F8F8F8] max-w-xl">I am a passionate developer with experience in building dynamic web applications.
         </p>
         <div className="flex flex-row gap-4 justify-center md:justify-start">
           {/* LinkedIn SVG */}
@@ -66,13 +67,15 @@ const Headersection = () => {
         </div>
       </div>
       
-      {/* Image Section */}
+      {/* Image Section with 3D tilt */}
       <div className="flex justify-center items-center w-full md:w-1/2 py-6 md:py-0">
-        <img
-          className="w-[180px] h-[180px] md:w-[600px] md:h-[600px] object-cover rounded-full shadow-2xl transition duration-300"
-          src={photo}
-          alt="Sriram Nishanth T"
-        />
+        <Tilt tiltMaxAngleX={14} tiltMaxAngleY={14} scale={1.03} glareEnable={true} className="rounded-full">
+          <img
+            className="w-40 h-40 sm:w-56 sm:h-56 md:w-[480px] md:h-[480px] lg:w-[520px] lg:h-[520px] object-cover rounded-full shadow-2xl max-w-full"
+            src={photo}
+            alt="Sriram Nishanth T"
+          />
+        </Tilt>
       </div>
     </motion.div>
   )
